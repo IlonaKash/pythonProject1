@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.11.4 on win32)" generated="20230817 23:06:54.399" rpa="false" schemaversion="4">
+<suite id="s1" name="Xpath Wikipedia" source="E:\PyCharm_Projects\pythonProject1\xpath_wikipedia.robot">
+<test id="s1-t1" name="2. Gather Morse Code Information" line="25">
+<kw name="Search Morse in Wikipedia">
+<kw name="... open Browser and serch Morse in Wiki">
+<msg timestamp="20230817 23:06:54.707" level="FAIL">No keyword with name '... open Browser and serch Morse in Wiki' found.</msg>
+<status status="FAIL" starttime="20230817 23:06:54.707" endtime="20230817 23:06:54.707"/>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<arg>options=add_experimental_option("detach", True)</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="NOT RUN" starttime="20230817 23:06:54.707" endtime="20230817 23:06:54.707"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="NOT RUN" starttime="20230817 23:06:54.707" endtime="20230817 23:06:54.707"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>https://www.wikipedia.org/</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="NOT RUN" starttime="20230817 23:06:54.707" endtime="20230817 23:06:54.707"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>//*[@id="searchInput"]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="NOT RUN" starttime="20230817 23:06:54.707" endtime="20230817 23:06:54.707"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//*[@id="searchInput"]</arg>
+<arg>Азбука морзе</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20230817 23:06:54.707" endtime="20230817 23:06:54.707"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${none}</arg>
+<arg>\ue007</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="NOT RUN" starttime="20230817 23:06:54.707" endtime="20230817 23:06:54.707"/>
+</kw>
+<status status="FAIL" starttime="20230817 23:06:54.707" endtime="20230817 23:06:54.707"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${Morse_Dict}</var>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" starttime="20230817 23:06:54.714" endtime="20230817 23:06:54.714"/>
+</kw>
+<for>
+<var>${index}</var>
+<var>in range</var>
+<var>0</var>
+<var>31</var>
+<iter>
+<var name="${index}"/>
+<var name="in range"/>
+<var name="0"/>
+<var name="31"/>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${letter}</var>
+<arg>xpath=(//table[@class='wikitable']/tbody/tr[${index}]/td)[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20230817 23:06:54.714" endtime="20230817 23:06:54.714"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${sound}</var>
+<arg>xpath=(//table[@class='wikitable']/tbody/tr[${index}]/td)[3]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20230817 23:06:54.714" endtime="20230817 23:06:54.714"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${morse_code_dict}</arg>
+<arg>${letter}</arg>
+<arg>${sound}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="NOT RUN" starttime="20230817 23:06:54.714" endtime="20230817 23:06:54.714"/>
+</kw>
+<kw name="[Return] From Dictionary">
+<arg>${morse_code_dict}</arg>
+<status status="NOT RUN" starttime="20230817 23:06:54.715" endtime="20230817 23:06:54.715"/>
+</kw>
+<status status="NOT RUN" starttime="20230817 23:06:54.714" endtime="20230817 23:06:54.715"/>
+</iter>
+<status status="NOT RUN" starttime="20230817 23:06:54.714" endtime="20230817 23:06:54.715"/>
+</for>
+<status status="FAIL" starttime="20230817 23:06:54.706" endtime="20230817 23:06:54.720">No keyword with name '... open Browser and serch Morse in Wiki' found.</status>
+</test>
+<status status="FAIL" starttime="20230817 23:06:54.402" endtime="20230817 23:06:54.721"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Xpath Wikipedia">Xpath Wikipedia</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

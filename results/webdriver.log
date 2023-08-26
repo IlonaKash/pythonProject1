@@ -1,0 +1,457 @@
+[1689268485.551][INFO]: Starting ChromeDriver 114.0.5735.90 (386bc09e8f4f2e025eddae123f36f6263096ae49-refs/branch-heads/5735@{#1052}) on port 53741
+[1689268485.551][INFO]: Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+[1689268486.054][INFO]: [6bf547f79e73fb0429f87763327b808a] COMMAND InitSession {
+   "capabilities": {
+      "alwaysMatch": {
+         "browserName": "chrome",
+         "goog:chromeOptions": {
+            "args": [  ],
+            "extensions": [  ]
+         },
+         "pageLoadStrategy": "normal"
+      },
+      "firstMatch": [ {
+      } ]
+   }
+}
+[1689268486.058][INFO]: Populating Preferences file: {
+   "alternate_error_pages": {
+      "enabled": false
+   },
+   "autofill": {
+      "enabled": false
+   },
+   "browser": {
+      "check_default_browser": false
+   },
+   "distribution": {
+      "import_bookmarks": false,
+      "import_history": false,
+      "import_search_engine": false,
+      "make_chrome_default_for_user": false,
+      "skip_first_run_ui": true
+   },
+   "dns_prefetching": {
+      "enabled": false
+   },
+   "profile": {
+      "content_settings": {
+         "pattern_pairs": {
+            "https://*,*": {
+               "media-stream": {
+                  "audio": "Default",
+                  "video": "Default"
+               }
+            }
+         }
+      },
+      "default_content_setting_values": {
+         "geolocation": 1
+      },
+      "default_content_settings": {
+         "geolocation": 1,
+         "mouselock": 1,
+         "notifications": 1,
+         "popups": 1,
+         "ppapi-broker": 1
+      },
+      "password_manager_enabled": false
+   },
+   "safebrowsing": {
+      "enabled": false
+   },
+   "search": {
+      "suggest_enabled": false
+   },
+   "translate": {
+      "enabled": false
+   }
+}
+[1689268486.058][INFO]: Populating Local State file: {
+   "background_mode": {
+      "enabled": false
+   },
+   "ssl": {
+      "rev_checking": {
+         "enabled": false
+      }
+   }
+}
+[1689268486.060][INFO]: Launching chrome: "C:\Program Files\Google\Chrome\Application\chrome.exe" --allow-pre-commit-input --disable-background-networking --disable-backgrounding-occluded-windows --disable-client-side-phishing-detection --disable-default-apps --disable-hang-monitor --disable-popup-blocking --disable-prompt-on-repost --disable-sync --enable-automation --enable-logging --log-level=0 --no-first-run --no-service-autorun --password-store=basic --remote-debugging-port=0 --test-type=webdriver --use-mock-keychain --user-data-dir="C:\Users\kashk\AppData\Local\Temp\scoped_dir13660_1086751030" data:,
+[1689268486.510][INFO]: resolved localhost to ["::1","127.0.0.1"]
+[1689268486.515][INFO]: [6bf547f79e73fb0429f87763327b808a] RESPONSE InitSession {
+   "capabilities": {
+      "acceptInsecureCerts": false,
+      "browserName": "chrome",
+      "browserVersion": "114.0.5735.199",
+      "chrome": {
+         "chromedriverVersion": "114.0.5735.90 (386bc09e8f4f2e025eddae123f36f6263096ae49-refs/branch-heads/5735@{#1052})",
+         "userDataDir": "C:\\Users\\kashk\\AppData\\Local\\Temp\\scoped_dir13660_1086751030"
+      },
+      "goog:chromeOptions": {
+         "debuggerAddress": "localhost:53744"
+      },
+      "networkConnectionEnabled": false,
+      "pageLoadStrategy": "normal",
+      "platformName": "windows",
+      "proxy": {
+      },
+      "setWindowRect": true,
+      "strictFileInteractability": false,
+      "timeouts": {
+         "implicit": 0,
+         "pageLoad": 300000,
+         "script": 30000
+      },
+      "unhandledPromptBehavior": "dismiss and notify",
+      "webauthn:extension:credBlob": true,
+      "webauthn:extension:largeBlob": true,
+      "webauthn:extension:minPinLength": true,
+      "webauthn:extension:prf": true,
+      "webauthn:virtualAuthenticators": true
+   },
+   "sessionId": "6bf547f79e73fb0429f87763327b808a"
+}
+[1689268486.516][INFO]: [6bf547f79e73fb0429f87763327b808a] COMMAND SetTimeouts {
+   "script": 5000
+}
+[1689268486.516][INFO]: [6bf547f79e73fb0429f87763327b808a] RESPONSE SetTimeouts
+[1689268486.516][INFO]: [6bf547f79e73fb0429f87763327b808a] COMMAND SetTimeouts {
+   "implicit": 0
+}
+[1689268486.516][INFO]: [6bf547f79e73fb0429f87763327b808a] RESPONSE SetTimeouts
+[1689268486.517][INFO]: [6bf547f79e73fb0429f87763327b808a] COMMAND SetTimeouts {
+   "pageLoad": 300000
+}
+[1689268486.517][INFO]: [6bf547f79e73fb0429f87763327b808a] RESPONSE SetTimeouts
+[1689268486.517][INFO]: [6bf547f79e73fb0429f87763327b808a] COMMAND Navigate {
+   "url": "https://stem.release.stemscopes-v4-dev.aws.acceleratelearning.com/login"
+}
+[1689268486.517][INFO]: Waiting for pending navigations...
+[1689268486.518][INFO]: Done waiting for pending navigations. Status: ok
+[1689268488.594][INFO]: Waiting for pending navigations...
+[1689268491.057][INFO]: Done waiting for pending navigations. Status: ok
+[1689268491.057][INFO]: [6bf547f79e73fb0429f87763327b808a] RESPONSE Navigate
+[1689268491.059][INFO]: [6bf547f79e73fb0429f87763327b808a] COMMAND MaximizeWindow {
+}
+[1689268491.059][INFO]: Waiting for pending navigations...
+[1689268491.080][INFO]: Done waiting for pending navigations. Status: ok
+[1689268491.186][INFO]: Waiting for pending navigations...
+[1689268491.186][INFO]: Done waiting for pending navigations. Status: ok
+[1689268491.186][INFO]: [6bf547f79e73fb0429f87763327b808a] RESPONSE MaximizeWindow {
+   "height": 1056,
+   "width": 1936,
+   "x": -8,
+   "y": -8
+}
+[1689268491.188][INFO]: [6bf547f79e73fb0429f87763327b808a] COMMAND FindElements {
+   "using": "css selector",
+   "value": "[id=\"react-select-2-input\"]"
+}
+[1689268491.188][INFO]: Waiting for pending navigations...
+[1689268491.188][INFO]: Done waiting for pending navigations. Status: ok
+[1689268491.196][INFO]: Waiting for pending navigations...
+[1689268491.196][INFO]: Done waiting for pending navigations. Status: ok
+[1689268491.196][INFO]: [6bf547f79e73fb0429f87763327b808a] RESPONSE FindElements [ {
+   "element-6066-11e4-a52e-4f735466cecf": "C0BD88554EF6D0E8F6DC2DF993A095E2_element_16"
+} ]
+[1689268491.197][INFO]: [6bf547f79e73fb0429f87763327b808a] COMMAND ClearElement {
+   "id": "C0BD88554EF6D0E8F6DC2DF993A095E2_element_16"
+}
+[1689268491.197][INFO]: Waiting for pending navigations...
+[1689268491.197][INFO]: Done waiting for pending navigations. Status: ok
+[1689268491.214][INFO]: 
+	=== NOTE: ===
+	The Clear command in ChromeDriver 2.43 and above
+	has been updated to conform to the current standard,
+	including raising blur event after clearing.
+
+[1689268491.221][INFO]: Waiting for pending navigations...
+[1689268491.221][INFO]: Done waiting for pending navigations. Status: ok
+[1689268491.221][INFO]: [6bf547f79e73fb0429f87763327b808a] RESPONSE ClearElement
+[1689268491.222][INFO]: [6bf547f79e73fb0429f87763327b808a] COMMAND TypeElement {
+   "id": "C0BD88554EF6D0E8F6DC2DF993A095E2_element_16",
+   "text": "Texas",
+   "value": [ "T", "e", "x", "a", "s" ]
+}
+[1689268491.222][INFO]: Waiting for pending navigations...
+[1689268491.222][INFO]: Done waiting for pending navigations. Status: ok
+[1689268491.273][INFO]: Waiting for pending navigations...
+[1689268491.274][INFO]: Done waiting for pending navigations. Status: ok
+[1689268491.275][INFO]: [6bf547f79e73fb0429f87763327b808a] RESPONSE TypeElement
+[1689268493.289][INFO]: [6bf547f79e73fb0429f87763327b808a] COMMAND FindElements {
+   "using": "css selector",
+   "value": "[id=\"react-select-2-input\"]"
+}
+[1689268493.289][INFO]: Waiting for pending navigations...
+[1689268493.290][INFO]: Done waiting for pending navigations. Status: ok
+[1689268493.297][INFO]: Waiting for pending navigations...
+[1689268493.297][INFO]: Done waiting for pending navigations. Status: ok
+[1689268493.298][INFO]: [6bf547f79e73fb0429f87763327b808a] RESPONSE FindElements [ {
+   "element-6066-11e4-a52e-4f735466cecf": "C0BD88554EF6D0E8F6DC2DF993A095E2_element_16"
+} ]
+[1689268493.298][INFO]: [6bf547f79e73fb0429f87763327b808a] COMMAND PerformActions {
+   "actions": [ {
+      "actions": [ {
+         "duration": 250,
+         "origin": {
+            "element-6066-11e4-a52e-4f735466cecf": "C0BD88554EF6D0E8F6DC2DF993A095E2_element_16"
+         },
+         "type": "pointerMove",
+         "x": 0,
+         "y": 0
+      }, {
+         "button": 0,
+         "duration": 0,
+         "type": "pointerDown"
+      }, {
+         "button": 0,
+         "duration": 0,
+         "type": "pointerUp"
+      } ],
+      "id": "mouse",
+      "parameters": {
+         "pointerType": "mouse"
+      },
+      "type": "pointer"
+   }, {
+      "actions": [ {
+         "duration": 0,
+         "type": "pause"
+      }, {
+         "duration": 0,
+         "type": "pause"
+      }, {
+         "duration": 0,
+         "type": "pause"
+      } ],
+      "id": "key",
+      "type": "key"
+   } ]
+}
+[1689268493.299][INFO]: Waiting for pending navigations...
+[1689268493.299][INFO]: Done waiting for pending navigations. Status: ok
+[1689268493.568][INFO]: Waiting for pending navigations...
+[1689268493.568][INFO]: Done waiting for pending navigations. Status: ok
+[1689268493.568][INFO]: [6bf547f79e73fb0429f87763327b808a] RESPONSE PerformActions
+[1689268493.569][INFO]: [6bf547f79e73fb0429f87763327b808a] COMMAND PerformActions {
+   "actions": [ {
+      "actions": [ {
+         "duration": 0,
+         "type": "pause"
+      }, {
+         "duration": 0,
+         "type": "pause"
+      } ],
+      "id": "mouse",
+      "parameters": {
+         "pointerType": "mouse"
+      },
+      "type": "pointer"
+   }, {
+      "actions": [ {
+         "type": "keyDown",
+         "value": ""
+      }, {
+         "type": "keyUp",
+         "value": ""
+      } ],
+      "id": "key",
+      "type": "key"
+   } ]
+}
+[1689268493.569][INFO]: Waiting for pending navigations...
+[1689268493.569][INFO]: Done waiting for pending navigations. Status: ok
+[1689268493.580][INFO]: Waiting for pending navigations...
+[1689268493.581][INFO]: Done waiting for pending navigations. Status: ok
+[1689268493.581][INFO]: [6bf547f79e73fb0429f87763327b808a] RESPONSE PerformActions
+[1689268493.582][INFO]: [6bf547f79e73fb0429f87763327b808a] COMMAND PerformActions {
+   "actions": [ {
+      "actions": [ {
+         "duration": 0,
+         "type": "pause"
+      }, {
+         "duration": 0,
+         "type": "pause"
+      } ],
+      "id": "mouse",
+      "parameters": {
+         "pointerType": "mouse"
+      },
+      "type": "pointer"
+   }, {
+      "actions": [ {
+         "type": "keyDown",
+         "value": ""
+      }, {
+         "type": "keyUp",
+         "value": ""
+      } ],
+      "id": "key",
+      "type": "key"
+   } ]
+}
+[1689268493.582][INFO]: Waiting for pending navigations...
+[1689268493.583][INFO]: Done waiting for pending navigations. Status: ok
+[1689268493.618][INFO]: Waiting for pending navigations...
+[1689268493.621][INFO]: Done waiting for pending navigations. Status: ok
+[1689268493.621][INFO]: [6bf547f79e73fb0429f87763327b808a] RESPONSE PerformActions
+[1689268496.623][INFO]: [6bf547f79e73fb0429f87763327b808a] COMMAND FindElements {
+   "using": "css selector",
+   "value": "[id=\"react-select-3-input\"]"
+}
+[1689268496.623][INFO]: Waiting for pending navigations...
+[1689268496.624][INFO]: Done waiting for pending navigations. Status: ok
+[1689268496.630][INFO]: Waiting for pending navigations...
+[1689268496.630][INFO]: Done waiting for pending navigations. Status: ok
+[1689268496.630][INFO]: [6bf547f79e73fb0429f87763327b808a] RESPONSE FindElements [ {
+   "element-6066-11e4-a52e-4f735466cecf": "C0BD88554EF6D0E8F6DC2DF993A095E2_element_23"
+} ]
+[1689268496.631][INFO]: [6bf547f79e73fb0429f87763327b808a] COMMAND ClearElement {
+   "id": "C0BD88554EF6D0E8F6DC2DF993A095E2_element_23"
+}
+[1689268496.631][INFO]: Waiting for pending navigations...
+[1689268496.631][INFO]: Done waiting for pending navigations. Status: ok
+[1689268496.643][INFO]: Waiting for pending navigations...
+[1689268496.644][INFO]: Done waiting for pending navigations. Status: ok
+[1689268496.644][INFO]: [6bf547f79e73fb0429f87763327b808a] RESPONSE ClearElement
+[1689268496.644][INFO]: [6bf547f79e73fb0429f87763327b808a] COMMAND TypeElement {
+   "id": "C0BD88554EF6D0E8F6DC2DF993A095E2_element_23",
+   "text": "Texas",
+   "value": [ "T", "e", "x", "a", "s" ]
+}
+[1689268496.644][INFO]: Waiting for pending navigations...
+[1689268496.645][INFO]: Done waiting for pending navigations. Status: ok
+[1689268496.678][INFO]: Waiting for pending navigations...
+[1689268496.680][INFO]: Done waiting for pending navigations. Status: ok
+[1689268496.680][INFO]: [6bf547f79e73fb0429f87763327b808a] RESPONSE TypeElement
+[1689268496.682][INFO]: [6bf547f79e73fb0429f87763327b808a] COMMAND PerformActions {
+   "actions": [ {
+      "actions": [ {
+         "duration": 0,
+         "type": "pause"
+      }, {
+         "duration": 0,
+         "type": "pause"
+      } ],
+      "id": "mouse",
+      "parameters": {
+         "pointerType": "mouse"
+      },
+      "type": "pointer"
+   }, {
+      "actions": [ {
+         "type": "keyDown",
+         "value": ""
+      }, {
+         "type": "keyUp",
+         "value": ""
+      } ],
+      "id": "key",
+      "type": "key"
+   } ]
+}
+[1689268496.683][INFO]: Waiting for pending navigations...
+[1689268496.683][INFO]: Done waiting for pending navigations. Status: ok
+[1689268496.694][INFO]: Waiting for pending navigations...
+[1689268496.695][INFO]: Done waiting for pending navigations. Status: ok
+[1689268496.695][INFO]: [6bf547f79e73fb0429f87763327b808a] RESPONSE PerformActions
+[1689268501.700][INFO]: [6bf547f79e73fb0429f87763327b808a] COMMAND FindElements {
+   "using": "css selector",
+   "value": "[id=\"username\"]"
+}
+[1689268501.700][INFO]: Waiting for pending navigations...
+[1689268501.701][INFO]: Done waiting for pending navigations. Status: ok
+[1689268501.714][INFO]: Waiting for pending navigations...
+[1689268501.715][INFO]: Done waiting for pending navigations. Status: ok
+[1689268501.715][INFO]: [6bf547f79e73fb0429f87763327b808a] RESPONSE FindElements [ {
+   "element-6066-11e4-a52e-4f735466cecf": "C0BD88554EF6D0E8F6DC2DF993A095E2_element_24"
+} ]
+[1689268501.715][INFO]: [6bf547f79e73fb0429f87763327b808a] COMMAND ClearElement {
+   "id": "C0BD88554EF6D0E8F6DC2DF993A095E2_element_24"
+}
+[1689268501.716][INFO]: Waiting for pending navigations...
+[1689268501.716][INFO]: Done waiting for pending navigations. Status: ok
+[1689268501.728][INFO]: Waiting for pending navigations...
+[1689268501.728][INFO]: Done waiting for pending navigations. Status: ok
+[1689268501.728][INFO]: [6bf547f79e73fb0429f87763327b808a] RESPONSE ClearElement
+[1689268501.729][INFO]: [6bf547f79e73fb0429f87763327b808a] COMMAND TypeElement {
+   "id": "C0BD88554EF6D0E8F6DC2DF993A095E2_element_24",
+   "text": "ikashkan",
+   "value": [ "i", "k", "a", "s", "h", "k", "a", "n" ]
+}
+[1689268501.729][INFO]: Waiting for pending navigations...
+[1689268501.729][INFO]: Done waiting for pending navigations. Status: ok
+[1689268501.770][INFO]: Waiting for pending navigations...
+[1689268501.771][INFO]: Done waiting for pending navigations. Status: ok
+[1689268501.771][INFO]: [6bf547f79e73fb0429f87763327b808a] RESPONSE TypeElement
+[1689268501.773][INFO]: [6bf547f79e73fb0429f87763327b808a] COMMAND FindElements {
+   "using": "css selector",
+   "value": "[id=\"password\"]"
+}
+[1689268501.773][INFO]: Waiting for pending navigations...
+[1689268501.773][INFO]: Done waiting for pending navigations. Status: ok
+[1689268501.778][INFO]: Waiting for pending navigations...
+[1689268501.779][INFO]: Done waiting for pending navigations. Status: ok
+[1689268501.779][INFO]: [6bf547f79e73fb0429f87763327b808a] RESPONSE FindElements [ {
+   "element-6066-11e4-a52e-4f735466cecf": "C0BD88554EF6D0E8F6DC2DF993A095E2_element_25"
+} ]
+[1689268501.779][INFO]: [6bf547f79e73fb0429f87763327b808a] COMMAND ClearElement {
+   "id": "C0BD88554EF6D0E8F6DC2DF993A095E2_element_25"
+}
+[1689268501.779][INFO]: Waiting for pending navigations...
+[1689268501.780][INFO]: Done waiting for pending navigations. Status: ok
+[1689268501.791][INFO]: Waiting for pending navigations...
+[1689268501.792][INFO]: Done waiting for pending navigations. Status: ok
+[1689268501.792][INFO]: [6bf547f79e73fb0429f87763327b808a] RESPONSE ClearElement
+[1689268501.793][INFO]: [6bf547f79e73fb0429f87763327b808a] COMMAND TypeElement {
+   "id": "C0BD88554EF6D0E8F6DC2DF993A095E2_element_25",
+   "text": "12345678Lone",
+   "value": [ "1", "2", "3", "4", "5", "6", "7", "8", "L", "o", "n", "e" ]
+}
+[1689268501.793][INFO]: Waiting for pending navigations...
+[1689268501.793][INFO]: Done waiting for pending navigations. Status: ok
+[1689268501.837][INFO]: Waiting for pending navigations...
+[1689268501.839][INFO]: Done waiting for pending navigations. Status: ok
+[1689268501.839][INFO]: [6bf547f79e73fb0429f87763327b808a] RESPONSE TypeElement
+[1689268501.840][INFO]: [6bf547f79e73fb0429f87763327b808a] COMMAND PerformActions {
+   "actions": [ {
+      "actions": [ {
+         "duration": 0,
+         "type": "pause"
+      }, {
+         "duration": 0,
+         "type": "pause"
+      } ],
+      "id": "mouse",
+      "parameters": {
+         "pointerType": "mouse"
+      },
+      "type": "pointer"
+   }, {
+      "actions": [ {
+         "type": "keyDown",
+         "value": ""
+      }, {
+         "type": "keyUp",
+         "value": ""
+      } ],
+      "id": "key",
+      "type": "key"
+   } ]
+}
+[1689268501.840][INFO]: Waiting for pending navigations...
+[1689268501.841][INFO]: Done waiting for pending navigations. Status: ok
+[1689268501.855][INFO]: Waiting for pending navigations...
+[1689268501.856][INFO]: Done waiting for pending navigations. Status: ok
+[1689268501.856][INFO]: [6bf547f79e73fb0429f87763327b808a] RESPONSE PerformActions
+[1689268506.858][INFO]: [6bf547f79e73fb0429f87763327b808a] COMMAND GetUrl {
+}
+[1689268506.858][INFO]: Waiting for pending navigations...
+[1689268506.858][INFO]: Done waiting for pending navigations. Status: ok
+[1689268506.860][INFO]: Waiting for pending navigations...
+[1689268506.860][INFO]: Done waiting for pending navigations. Status: ok
+[1689268506.860][INFO]: [6bf547f79e73fb0429f87763327b808a] RESPONSE GetUrl "https://stem.release.stemscopes-v4-dev.aws.acceleratelearning.com/suit/tx"
+[1689268506.956][INFO]: [6bf547f79e73fb0429f87763327b808a] COMMAND QuitAll {
+}
+[1689268506.982][INFO]: [6bf547f79e73fb0429f87763327b808a] RESPONSE QuitAll

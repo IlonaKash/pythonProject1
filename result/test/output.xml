@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1 (Python 3.11.2 on win32)" generated="20230627 11:36:36.976" rpa="false" schemaversion="4">
+<suite id="s1" name="Test" source="C:\Users\kashk\PycharmProjects\pythonProject1\Test.robot">
+<test id="s1-t1" name="1. Test" line="17">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<arg>service_log_path=webdriver.log</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230627 11:36:37.143" level="INFO">Opening browser 'chrome' to base url 'https://www.google.com'.</msg>
+<msg timestamp="20230627 11:36:37.143" level="INFO">Browser driver log file created to: C:\Users\kashk\PycharmProjects\pythonProject1\result\test\webdriver.log</msg>
+<status status="PASS" starttime="20230627 11:36:37.143" endtime="20230627 11:36:39.202"/>
+</kw>
+<kw name="Get Location" library="SeleniumLibrary">
+<var>${test}</var>
+<doc>Returns the current browser window URL.</doc>
+<msg timestamp="20230627 11:36:39.206" level="INFO">${test} = https://www.google.com/</msg>
+<status status="PASS" starttime="20230627 11:36:39.202" endtime="20230627 11:36:39.206"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>20s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230627 11:36:59.206" level="INFO">Slept 20 seconds</msg>
+<status status="PASS" starttime="20230627 11:36:39.206" endtime="20230627 11:36:59.206"/>
+</kw>
+<status status="PASS" starttime="20230627 11:36:37.142" endtime="20230627 11:36:59.206"/>
+</test>
+<status status="PASS" starttime="20230627 11:36:36.977" endtime="20230627 11:36:59.207"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Test">Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

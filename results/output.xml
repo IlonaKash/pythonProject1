@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1 (Python 3.11.2 on win32)" generated="20230722 15:31:22.682" rpa="false" schemaversion="4">
+<suite id="s1" name="LOOPs" source="C:\Users\kashk\PycharmProjects\pythonProject1\LOOPs.robot">
+<test id="s1-t1" name="1.2. Test" line="35">
+<for flavor="IN">
+<var>${index}</var>
+<var>${item}</var>
+<value>@{my_fruit}</value>
+<iter>
+<var name="${index}"/>
+<var name="${item}"/>
+<kw name="IF ${index} != 5">
+<status status="NOT RUN" starttime="20230722 15:31:22.845" endtime="20230722 15:31:22.845"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${fruits}</arg>
+<arg>${item}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="NOT RUN" starttime="20230722 15:31:22.845" endtime="20230722 15:31:22.845"/>
+</kw>
+<status status="NOT RUN" starttime="20230722 15:31:22.845" endtime="20230722 15:31:22.845"/>
+</iter>
+<msg timestamp="20230722 15:31:22.845" level="FAIL">Number of FOR loop values should be multiple of its variables. Got 2 variables but 7 values.</msg>
+<status status="FAIL" starttime="20230722 15:31:22.845" endtime="20230722 15:31:22.845"/>
+</for>
+<error>
+<value>END</value>
+<status status="NOT RUN" starttime="20230722 15:31:22.845" endtime="20230722 15:31:22.845"/>
+</error>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${item}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20230722 15:31:22.845" endtime="20230722 15:31:22.845"/>
+</kw>
+<doc>Lesson 4 Loops</doc>
+<tag>smoke loop goodle</tag>
+<status status="FAIL" starttime="20230722 15:31:22.845" endtime="20230722 15:31:22.845">Number of FOR loop values should be multiple of its variables. Got 2 variables but 7 values.</status>
+</test>
+<status status="FAIL" starttime="20230722 15:31:22.682" endtime="20230722 15:31:22.845"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">smoke loop goodle</stat>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="LOOPs">LOOPs</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

@@ -1,0 +1,871 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.11.4 on win32)" generated="20230826 21:20:54.642" rpa="false" schemaversion="4">
+<suite id="s1" name="Xpath Wikipedia" source="E:\PyCharm_Projects\pythonProject1\xpath_wikipedia.robot">
+<test id="s1-t1" name="1. Search Morse in Wikipedia" line="18">
+<kw name="Open Wikipedia page">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<arg>options=add_experimental_option("detach", True)</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230826 21:20:54.806" level="INFO">Opening browser 'chrome' to base url 'https://www.wikipedia.org/'.</msg>
+<status status="PASS" starttime="20230826 21:20:54.805" endtime="20230826 21:20:57.037"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230826 21:20:57.037" endtime="20230826 21:20:57.148"/>
+</kw>
+<status status="PASS" starttime="20230826 21:20:54.805" endtime="20230826 21:20:57.148"/>
+</kw>
+<kw name="Find Азбука Морзе page">
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>//*[@id="js-link-box-ru"]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20230826 21:20:57.158" level="INFO">Current page contains element '//*[@id="js-link-box-ru"]'.</msg>
+<status status="PASS" starttime="20230826 21:20:57.149" endtime="20230826 21:20:57.158"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//*[@id="js-link-box-ru"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230826 21:20:57.159" level="INFO">Clicking element '//*[@id="js-link-box-ru"]'.</msg>
+<status status="PASS" starttime="20230826 21:20:57.158" endtime="20230826 21:21:00.449"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//*[@id="searchInput"]</arg>
+<arg>Азбука морзе</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230826 21:21:00.450" level="INFO">Typing text 'Азбука морзе' into text field '//*[@id="searchInput"]'.</msg>
+<status status="PASS" starttime="20230826 21:21:00.449" endtime="20230826 21:21:00.529"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230826 21:21:03.531" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20230826 21:21:00.529" endtime="20230826 21:21:03.531"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${none}</arg>
+<arg>\ue007</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20230826 21:21:03.531" level="INFO">Sending key(s) ('\ue007',) to page.</msg>
+<msg timestamp="20230826 21:21:03.531" level="INFO">Sending key </msg>
+<status status="PASS" starttime="20230826 21:21:03.531" endtime="20230826 21:21:05.341"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//a/span[text()="Напевы"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230826 21:21:05.342" level="INFO">Clicking element '//a/span[text()="Напевы"]'.</msg>
+<status status="PASS" starttime="20230826 21:21:05.341" endtime="20230826 21:21:05.387"/>
+</kw>
+<status status="PASS" starttime="20230826 21:20:57.148" endtime="20230826 21:21:05.387"/>
+</kw>
+<kw name="Collect Morse Code Information">
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${morse_dict}</var>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20230826 21:21:05.388" level="INFO">${morse_dict} = {}</msg>
+<status status="PASS" starttime="20230826 21:21:05.388" endtime="20230826 21:21:05.388"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${row}</var>
+<value>1</value>
+<value>33</value>
+<iter>
+<var name="${row}">1</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${letter}</var>
+<arg>(//tbody)[1]/tr[${row}]/td[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230826 21:21:05.407" level="INFO">${letter} = А</msg>
+<status status="PASS" starttime="20230826 21:21:05.388" endtime="20230826 21:21:05.407"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${sound}</var>
+<arg>(//tbody)[1]/tr[${row}]/td[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230826 21:21:05.421" level="INFO">${sound} = ай-даа, ай-ваа</msg>
+<status status="PASS" starttime="20230826 21:21:05.407" endtime="20230826 21:21:05.421"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${morse_dict}</arg>
+<arg>${letter}=${sound}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20230826 21:21:05.421" endtime="20230826 21:21:05.421"/>
+</kw>
+<status status="PASS" starttime="20230826 21:21:05.388" endtime="20230826 21:21:05.421"/>
+</iter>
+<iter>
+<var name="${row}">2</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${letter}</var>
+<arg>(//tbody)[1]/tr[${row}]/td[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230826 21:21:05.436" level="INFO">${letter} = Б</msg>
+<status status="PASS" starttime="20230826 21:21:05.421" endtime="20230826 21:21:05.437"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${sound}</var>
+<arg>(//tbody)[1]/tr[${row}]/td[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230826 21:21:05.451" level="INFO">${sound} = баа-ки-те-кут, беей-ба-ра-бан</msg>
+<status status="PASS" starttime="20230826 21:21:05.437" endtime="20230826 21:21:05.451"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${morse_dict}</arg>
+<arg>${letter}=${sound}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20230826 21:21:05.451" endtime="20230826 21:21:05.451"/>
+</kw>
+<status status="PASS" starttime="20230826 21:21:05.421" endtime="20230826 21:21:05.451"/>
+</iter>
+<iter>
+<var name="${row}">3</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${letter}</var>
+<arg>(//tbody)[1]/tr[${row}]/td[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230826 21:21:05.465" level="INFO">${letter} = В</msg>
+<status status="PASS" starttime="20230826 21:21:05.452" endtime="20230826 21:21:05.465"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${sound}</var>
+<arg>(//tbody)[1]/tr[${row}]/td[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230826 21:21:05.478" level="INFO">${sound} = ви-даа-лаа, вол-чаа-таа</msg>
+<status status="PASS" starttime="20230826 21:21:05.466" endtime="20230826 21:21:05.478"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${morse_dict}</arg>
+<arg>${letter}=${sound}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20230826 21:21:05.478" endtime="20230826 21:21:05.478"/>
+</kw>
+<status status="PASS" starttime="20230826 21:21:05.452" endtime="20230826 21:21:05.478"/>
+</iter>
+<iter>
+<var name="${row}">4</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${letter}</var>
+<arg>(//tbody)[1]/tr[${row}]/td[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230826 21:21:05.493" level="INFO">${letter} = Г</msg>
+<status status="PASS" starttime="20230826 21:21:05.478" endtime="20230826 21:21:05.493"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${sound}</var>
+<arg>(//tbody)[1]/tr[${row}]/td[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230826 21:21:05.506" level="INFO">${sound} = гаа-раа-жи, гаа-гаа-рин</msg>
+<status status="PASS" starttime="20230826 21:21:05.493" endtime="20230826 21:21:05.506"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${morse_dict}</arg>
+<arg>${letter}=${sound}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20230826 21:21:05.506" endtime="20230826 21:21:05.506"/>
+</kw>
+<status status="PASS" starttime="20230826 21:21:05.478" endtime="20230826 21:21:05.506"/>
+</iter>
+<iter>
+<var name="${row}">5</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${letter}</var>
+<arg>(//tbody)[1]/tr[${row}]/td[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230826 21:21:05.522" level="INFO">${letter} = Д</msg>
+<status status="PASS" starttime="20230826 21:21:05.507" endtime="20230826 21:21:05.522"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${sound}</var>
+<arg>(//tbody)[1]/tr[${row}]/td[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230826 21:21:05.535" level="INFO">${sound} = доо-ми-ки</msg>
+<status status="PASS" starttime="20230826 21:21:05.522" endtime="20230826 21:21:05.535"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${morse_dict}</arg>
+<arg>${letter}=${sound}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20230826 21:21:05.535" endtime="20230826 21:21:05.535"/>
+</kw>
+<status status="PASS" starttime="20230826 21:21:05.507" endtime="20230826 21:21:05.535"/>
+</iter>
+<iter>
+<var name="${row}">6</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${letter}</var>
+<arg>(//tbody)[1]/tr[${row}]/td[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230826 21:21:05.548" level="INFO">${letter} = Е (также и Ё)</msg>
+<status status="PASS" starttime="20230826 21:21:05.535" endtime="20230826 21:21:05.548"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${sound}</var>
+<arg>(//tbody)[1]/tr[${row}]/td[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230826 21:21:05.562" level="INFO">${sound} = есть</msg>
+<status status="PASS" starttime="20230826 21:21:05.549" endtime="20230826 21:21:05.562"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${morse_dict}</arg>
+<arg>${letter}=${sound}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20230826 21:21:05.563" endtime="20230826 21:21:05.563"/>
+</kw>
+<status status="PASS" starttime="20230826 21:21:05.535" endtime="20230826 21:21:05.563"/>
+</iter>
+<iter>
+<var name="${row}">7</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${letter}</var>
+<arg>(//tbody)[1]/tr[${row}]/td[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230826 21:21:05.576" level="INFO">${letter} = Ж</msg>
+<status status="PASS" starttime="20230826 21:21:05.563" endtime="20230826 21:21:05.576"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${sound}</var>
+<arg>(//tbody)[1]/tr[${row}]/td[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230826 21:21:05.589" level="INFO">${sound} = же-ле-зис-тоо</msg>
+<status status="PASS" starttime="20230826 21:21:05.576" endtime="20230826 21:21:05.589"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${morse_dict}</arg>
+<arg>${letter}=${sound}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20230826 21:21:05.589" endtime="20230826 21:21:05.589"/>
+</kw>
+<status status="PASS" starttime="20230826 21:21:05.563" endtime="20230826 21:21:05.589"/>
+</iter>
+<iter>
+<var name="${row}">8</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${letter}</var>
+<arg>(//tbody)[1]/tr[${row}]/td[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230826 21:21:05.602" level="INFO">${letter} = З</msg>
+<status status="PASS" starttime="20230826 21:21:05.589" endtime="20230826 21:21:05.602"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${sound}</var>
+<arg>(//tbody)[1]/tr[${row}]/td[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230826 21:21:05.614" level="INFO">${sound} = заа-каа-ти-ки</msg>
+<status status="PASS" starttime="20230826 21:21:05.602" endtime="20230826 21:21:05.614"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${morse_dict}</arg>
+<arg>${letter}=${sound}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20230826 21:21:05.614" endtime="20230826 21:21:05.614"/>
+</kw>
+<status status="PASS" starttime="20230826 21:21:05.589" endtime="20230826 21:21:05.614"/>
+</iter>
+<iter>
+<var name="${row}">9</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${letter}</var>
+<arg>(//tbody)[1]/tr[${row}]/td[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230826 21:21:05.626" level="INFO">${letter} = И</msg>
+<status status="PASS" starttime="20230826 21:21:05.615" endtime="20230826 21:21:05.626"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${sound}</var>
+<arg>(//tbody)[1]/tr[${row}]/td[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230826 21:21:05.638" level="INFO">${sound} = и-ди, ишь-ты</msg>
+<status status="PASS" starttime="20230826 21:21:05.626" endtime="20230826 21:21:05.638"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${morse_dict}</arg>
+<arg>${letter}=${sound}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20230826 21:21:05.638" endtime="20230826 21:21:05.638"/>
+</kw>
+<status status="PASS" starttime="20230826 21:21:05.614" endtime="20230826 21:21:05.638"/>
+</iter>
+<iter>
+<var name="${row}">10</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${letter}</var>
+<arg>(//tbody)[1]/tr[${row}]/td[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230826 21:21:05.651" level="INFO">${letter} = Й</msg>
+<status status="PASS" starttime="20230826 21:21:05.639" endtime="20230826 21:21:05.651"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${sound}</var>
+<arg>(//tbody)[1]/tr[${row}]/td[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230826 21:21:05.663" level="INFO">${sound} = йес-наа-паа-раа, Йош-каа-роо-лаа, и-краа-ткоо-еее</msg>
+<status status="PASS" starttime="20230826 21:21:05.651" endtime="20230826 21:21:05.663"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${morse_dict}</arg>
+<arg>${letter}=${sound}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20230826 21:21:05.663" endtime="20230826 21:21:05.663"/>
+</kw>
+<status status="PASS" starttime="20230826 21:21:05.639" endtime="20230826 21:21:05.663"/>
+</iter>
+<iter>
+<var name="${row}">11</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${letter}</var>
+<arg>(//tbody)[1]/tr[${row}]/td[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230826 21:21:05.676" level="INFO">${letter} = К</msg>
+<status status="PASS" starttime="20230826 21:21:05.664" endtime="20230826 21:21:05.676"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${sound}</var>
+<arg>(//tbody)[1]/tr[${row}]/td[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230826 21:21:05.688" level="INFO">${sound} = каак-же-таак, каак-де-лаа</msg>
+<status status="PASS" starttime="20230826 21:21:05.676" endtime="20230826 21:21:05.688"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${morse_dict}</arg>
+<arg>${letter}=${sound}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20230826 21:21:05.688" endtime="20230826 21:21:05.689"/>
+</kw>
+<status status="PASS" starttime="20230826 21:21:05.663" endtime="20230826 21:21:05.689"/>
+</iter>
+<iter>
+<var name="${row}">12</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${letter}</var>
+<arg>(//tbody)[1]/tr[${row}]/td[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230826 21:21:05.701" level="INFO">${letter} = Л</msg>
+<status status="PASS" starttime="20230826 21:21:05.689" endtime="20230826 21:21:05.701"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${sound}</var>
+<arg>(//tbody)[1]/tr[${row}]/td[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230826 21:21:05.714" level="INFO">${sound} = лу-наа-ти-ки</msg>
+<status status="PASS" starttime="20230826 21:21:05.702" endtime="20230826 21:21:05.715"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${morse_dict}</arg>
+<arg>${letter}=${sound}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20230826 21:21:05.715" endtime="20230826 21:21:05.715"/>
+</kw>
+<status status="PASS" starttime="20230826 21:21:05.689" endtime="20230826 21:21:05.715"/>
+</iter>
+<iter>
+<var name="${row}">13</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${letter}</var>
+<arg>(//tbody)[1]/tr[${row}]/td[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230826 21:21:05.727" level="INFO">${letter} = М</msg>
+<status status="PASS" starttime="20230826 21:21:05.715" endtime="20230826 21:21:05.727"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${sound}</var>
+<arg>(//tbody)[1]/tr[${row}]/td[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230826 21:21:05.739" level="INFO">${sound} = маа-маа, Маа-шаа[21]</msg>
+<status status="PASS" starttime="20230826 21:21:05.727" endtime="20230826 21:21:05.739"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${morse_dict}</arg>
+<arg>${letter}=${sound}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20230826 21:21:05.739" endtime="20230826 21:21:05.740"/>
+</kw>
+<status status="PASS" starttime="20230826 21:21:05.715" endtime="20230826 21:21:05.740"/>
+</iter>
+<iter>
+<var name="${row}">14</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${letter}</var>
+<arg>(//tbody)[1]/tr[${row}]/td[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230826 21:21:05.752" level="INFO">${letter} = Н</msg>
+<status status="PASS" starttime="20230826 21:21:05.740" endtime="20230826 21:21:05.752"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${sound}</var>
+<arg>(//tbody)[1]/tr[${row}]/td[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230826 21:21:05.765" level="INFO">${sound} = ноо-мер, наа-те</msg>
+<status status="PASS" starttime="20230826 21:21:05.753" endtime="20230826 21:21:05.765"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${morse_dict}</arg>
+<arg>${letter}=${sound}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20230826 21:21:05.765" endtime="20230826 21:21:05.765"/>
+</kw>
+<status status="PASS" starttime="20230826 21:21:05.740" endtime="20230826 21:21:05.765"/>
+</iter>
+<iter>
+<var name="${row}">15</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${letter}</var>
+<arg>(//tbody)[1]/tr[${row}]/td[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230826 21:21:05.777" level="INFO">${letter} = О</msg>
+<status status="PASS" starttime="20230826 21:21:05.765" endtime="20230826 21:21:05.777"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${sound}</var>
+<arg>(//tbody)[1]/tr[${row}]/td[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230826 21:21:05.789" level="INFO">${sound} = оо-коо-лоо</msg>
+<status status="PASS" starttime="20230826 21:21:05.777" endtime="20230826 21:21:05.789"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${morse_dict}</arg>
+<arg>${letter}=${sound}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20230826 21:21:05.790" endtime="20230826 21:21:05.790"/>
+</kw>
+<status status="PASS" starttime="20230826 21:21:05.765" endtime="20230826 21:21:05.790"/>
+</iter>
+<iter>
+<var name="${row}">16</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${letter}</var>
+<arg>(//tbody)[1]/tr[${row}]/td[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230826 21:21:05.803" level="INFO">${letter} = П</msg>
+<status status="PASS" starttime="20230826 21:21:05.790" endtime="20230826 21:21:05.803"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${sound}</var>
+<arg>(//tbody)[1]/tr[${row}]/td[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230826 21:21:05.815" level="INFO">${sound} = пи-лаа-поо-ёт</msg>
+<status status="PASS" starttime="20230826 21:21:05.803" endtime="20230826 21:21:05.815"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${morse_dict}</arg>
+<arg>${letter}=${sound}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20230826 21:21:05.816" endtime="20230826 21:21:05.816"/>
+</kw>
+<status status="PASS" starttime="20230826 21:21:05.790" endtime="20230826 21:21:05.816"/>
+</iter>
+<iter>
+<var name="${row}">17</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${letter}</var>
+<arg>(//tbody)[1]/tr[${row}]/td[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230826 21:21:05.828" level="INFO">${letter} = Р</msg>
+<status status="PASS" starttime="20230826 21:21:05.816" endtime="20230826 21:21:05.828"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${sound}</var>
+<arg>(//tbody)[1]/tr[${row}]/td[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230826 21:21:05.842" level="INFO">${sound} = ре-шаа-ет, ру-каа-ми</msg>
+<status status="PASS" starttime="20230826 21:21:05.828" endtime="20230826 21:21:05.842"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${morse_dict}</arg>
+<arg>${letter}=${sound}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20230826 21:21:05.842" endtime="20230826 21:21:05.842"/>
+</kw>
+<status status="PASS" starttime="20230826 21:21:05.816" endtime="20230826 21:21:05.842"/>
+</iter>
+<iter>
+<var name="${row}">18</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${letter}</var>
+<arg>(//tbody)[1]/tr[${row}]/td[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230826 21:21:05.856" level="INFO">${letter} = С</msg>
+<status status="PASS" starttime="20230826 21:21:05.842" endtime="20230826 21:21:05.856"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${sound}</var>
+<arg>(//tbody)[1]/tr[${row}]/td[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230826 21:21:05.868" level="INFO">${sound} = си-ни-е, са-мо-лёт</msg>
+<status status="PASS" starttime="20230826 21:21:05.856" endtime="20230826 21:21:05.869"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${morse_dict}</arg>
+<arg>${letter}=${sound}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20230826 21:21:05.869" endtime="20230826 21:21:05.869"/>
+</kw>
+<status status="PASS" starttime="20230826 21:21:05.842" endtime="20230826 21:21:05.869"/>
+</iter>
+<iter>
+<var name="${row}">19</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${letter}</var>
+<arg>(//tbody)[1]/tr[${row}]/td[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230826 21:21:05.882" level="INFO">${letter} = Т</msg>
+<status status="PASS" starttime="20230826 21:21:05.869" endtime="20230826 21:21:05.882"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${sound}</var>
+<arg>(//tbody)[1]/tr[${row}]/td[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230826 21:21:05.895" level="INFO">${sound} = таак, таам</msg>
+<status status="PASS" starttime="20230826 21:21:05.882" endtime="20230826 21:21:05.895"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${morse_dict}</arg>
+<arg>${letter}=${sound}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20230826 21:21:05.895" endtime="20230826 21:21:05.895"/>
+</kw>
+<status status="PASS" starttime="20230826 21:21:05.869" endtime="20230826 21:21:05.895"/>
+</iter>
+<iter>
+<var name="${row}">20</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${letter}</var>
+<arg>(//tbody)[1]/tr[${row}]/td[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230826 21:21:05.908" level="INFO">${letter} = У</msg>
+<status status="PASS" starttime="20230826 21:21:05.896" endtime="20230826 21:21:05.908"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${sound}</var>
+<arg>(//tbody)[1]/tr[${row}]/td[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230826 21:21:05.924" level="INFO">${sound} = у-нес-лоо, у-бе-гуу</msg>
+<status status="PASS" starttime="20230826 21:21:05.908" endtime="20230826 21:21:05.924"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${morse_dict}</arg>
+<arg>${letter}=${sound}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20230826 21:21:05.924" endtime="20230826 21:21:05.925"/>
+</kw>
+<status status="PASS" starttime="20230826 21:21:05.895" endtime="20230826 21:21:05.925"/>
+</iter>
+<iter>
+<var name="${row}">21</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${letter}</var>
+<arg>(//tbody)[1]/tr[${row}]/td[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230826 21:21:05.938" level="INFO">${letter} = Ф</msg>
+<status status="PASS" starttime="20230826 21:21:05.925" endtime="20230826 21:21:05.938"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${sound}</var>
+<arg>(//tbody)[1]/tr[${row}]/td[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230826 21:21:05.952" level="INFO">${sound} = фи-ли-моон-чик</msg>
+<status status="PASS" starttime="20230826 21:21:05.939" endtime="20230826 21:21:05.952"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${morse_dict}</arg>
+<arg>${letter}=${sound}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20230826 21:21:05.952" endtime="20230826 21:21:05.953"/>
+</kw>
+<status status="PASS" starttime="20230826 21:21:05.925" endtime="20230826 21:21:05.953"/>
+</iter>
+<iter>
+<var name="${row}">22</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${letter}</var>
+<arg>(//tbody)[1]/tr[${row}]/td[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230826 21:21:05.967" level="INFO">${letter} = Х</msg>
+<status status="PASS" starttime="20230826 21:21:05.953" endtime="20230826 21:21:05.967"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${sound}</var>
+<arg>(//tbody)[1]/tr[${row}]/td[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230826 21:21:05.979" level="INFO">${sound} = хи-ми-чи-те</msg>
+<status status="PASS" starttime="20230826 21:21:05.967" endtime="20230826 21:21:05.979"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${morse_dict}</arg>
+<arg>${letter}=${sound}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20230826 21:21:05.979" endtime="20230826 21:21:05.980"/>
+</kw>
+<status status="PASS" starttime="20230826 21:21:05.953" endtime="20230826 21:21:05.980"/>
+</iter>
+<iter>
+<var name="${row}">23</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${letter}</var>
+<arg>(//tbody)[1]/tr[${row}]/td[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230826 21:21:05.992" level="INFO">${letter} = Ц</msg>
+<status status="PASS" starttime="20230826 21:21:05.980" endtime="20230826 21:21:05.992"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${sound}</var>
+<arg>(//tbody)[1]/tr[${row}]/td[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230826 21:21:06.004" level="INFO">${sound} = цаа-пли-наа-ши, цаа-пли-цаа-пли</msg>
+<status status="PASS" starttime="20230826 21:21:05.992" endtime="20230826 21:21:06.004"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${morse_dict}</arg>
+<arg>${letter}=${sound}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20230826 21:21:06.004" endtime="20230826 21:21:06.004"/>
+</kw>
+<status status="PASS" starttime="20230826 21:21:05.980" endtime="20230826 21:21:06.004"/>
+</iter>
+<iter>
+<var name="${row}">24</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${letter}</var>
+<arg>(//tbody)[1]/tr[${row}]/td[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230826 21:21:06.017" level="INFO">${letter} = Ч</msg>
+<status status="PASS" starttime="20230826 21:21:06.004" endtime="20230826 21:21:06.017"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${sound}</var>
+<arg>(//tbody)[1]/tr[${row}]/td[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230826 21:21:06.030" level="INFO">${sound} = чаа-шаа-тоо-нет, чее-лоо-вее-чек</msg>
+<status status="PASS" starttime="20230826 21:21:06.017" endtime="20230826 21:21:06.030"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${morse_dict}</arg>
+<arg>${letter}=${sound}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20230826 21:21:06.030" endtime="20230826 21:21:06.031"/>
+</kw>
+<status status="PASS" starttime="20230826 21:21:06.004" endtime="20230826 21:21:06.031"/>
+</iter>
+<iter>
+<var name="${row}">25</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${letter}</var>
+<arg>(//tbody)[1]/tr[${row}]/td[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230826 21:21:06.044" level="INFO">${letter} = Ш</msg>
+<status status="PASS" starttime="20230826 21:21:06.031" endtime="20230826 21:21:06.044"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${sound}</var>
+<arg>(//tbody)[1]/tr[${row}]/td[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230826 21:21:06.057" level="INFO">${sound} = шаа-роо-ваа-рыы, шуу-раа-доо-маа</msg>
+<status status="PASS" starttime="20230826 21:21:06.044" endtime="20230826 21:21:06.057"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${morse_dict}</arg>
+<arg>${letter}=${sound}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20230826 21:21:06.057" endtime="20230826 21:21:06.057"/>
+</kw>
+<status status="PASS" starttime="20230826 21:21:06.031" endtime="20230826 21:21:06.057"/>
+</iter>
+<iter>
+<var name="${row}">26</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${letter}</var>
+<arg>(//tbody)[1]/tr[${row}]/td[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230826 21:21:06.070" level="INFO">${letter} = Щ</msg>
+<status status="PASS" starttime="20230826 21:21:06.057" endtime="20230826 21:21:06.070"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${sound}</var>
+<arg>(//tbody)[1]/tr[${row}]/td[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230826 21:21:06.085" level="INFO">${sound} = щаа-ваам-не-шаа, щуу-каа-жи-ваа</msg>
+<status status="PASS" starttime="20230826 21:21:06.070" endtime="20230826 21:21:06.085"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${morse_dict}</arg>
+<arg>${letter}=${sound}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20230826 21:21:06.085" endtime="20230826 21:21:06.085"/>
+</kw>
+<status status="PASS" starttime="20230826 21:21:06.057" endtime="20230826 21:21:06.086"/>
+</iter>
+<iter>
+<var name="${row}">27</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${letter}</var>
+<arg>(//tbody)[1]/tr[${row}]/td[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230826 21:21:06.100" level="INFO">${letter} = Ъ[22]</msg>
+<status status="PASS" starttime="20230826 21:21:06.086" endtime="20230826 21:21:06.100"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${sound}</var>
+<arg>(//tbody)[1]/tr[${row}]/td[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230826 21:21:06.117" level="INFO">${sound} = твёёр-дыый-не-мяяг-киий</msg>
+<status status="PASS" starttime="20230826 21:21:06.100" endtime="20230826 21:21:06.117"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${morse_dict}</arg>
+<arg>${letter}=${sound}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20230826 21:21:06.117" endtime="20230826 21:21:06.117"/>
+</kw>
+<status status="PASS" starttime="20230826 21:21:06.086" endtime="20230826 21:21:06.117"/>
+</iter>
+<iter>
+<var name="${row}">28</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${letter}</var>
+<arg>(//tbody)[1]/tr[${row}]/td[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230826 21:21:06.131" level="INFO">${letter} = Ы</msg>
+<status status="PASS" starttime="20230826 21:21:06.118" endtime="20230826 21:21:06.131"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${sound}</var>
+<arg>(//tbody)[1]/tr[${row}]/td[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230826 21:21:06.144" level="INFO">${sound} = ыы-не-наа-доо</msg>
+<status status="PASS" starttime="20230826 21:21:06.131" endtime="20230826 21:21:06.144"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${morse_dict}</arg>
+<arg>${letter}=${sound}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20230826 21:21:06.144" endtime="20230826 21:21:06.144"/>
+</kw>
+<status status="PASS" starttime="20230826 21:21:06.118" endtime="20230826 21:21:06.144"/>
+</iter>
+<iter>
+<var name="${row}">29</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${letter}</var>
+<arg>(//tbody)[1]/tr[${row}]/td[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230826 21:21:06.156" level="INFO">${letter} = Ь (также и Ъ)</msg>
+<status status="PASS" starttime="20230826 21:21:06.144" endtime="20230826 21:21:06.156"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${sound}</var>
+<arg>(//tbody)[1]/tr[${row}]/td[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230826 21:21:06.169" level="INFO">${sound} = тоо-мяг-кий-знаак, знаак-мяг-кий-знаак</msg>
+<status status="PASS" starttime="20230826 21:21:06.156" endtime="20230826 21:21:06.169"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${morse_dict}</arg>
+<arg>${letter}=${sound}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20230826 21:21:06.169" endtime="20230826 21:21:06.169"/>
+</kw>
+<status status="PASS" starttime="20230826 21:21:06.144" endtime="20230826 21:21:06.169"/>
+</iter>
+<iter>
+<var name="${row}">30</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${letter}</var>
+<arg>(//tbody)[1]/tr[${row}]/td[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230826 21:21:06.182" level="INFO">${letter} = Э</msg>
+<status status="PASS" starttime="20230826 21:21:06.169" endtime="20230826 21:21:06.182"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${sound}</var>
+<arg>(//tbody)[1]/tr[${row}]/td[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230826 21:21:06.206" level="INFO">${sound} = э-ле-роо-ни-ки, э-ле-ктроо-ни-ка</msg>
+<status status="PASS" starttime="20230826 21:21:06.182" endtime="20230826 21:21:06.206"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${morse_dict}</arg>
+<arg>${letter}=${sound}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20230826 21:21:06.206" endtime="20230826 21:21:06.207"/>
+</kw>
+<status status="PASS" starttime="20230826 21:21:06.169" endtime="20230826 21:21:06.207"/>
+</iter>
+<iter>
+<var name="${row}">31</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${letter}</var>
+<arg>(//tbody)[1]/tr[${row}]/td[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230826 21:21:06.220" level="INFO">${letter} = Ю</msg>
+<status status="PASS" starttime="20230826 21:21:06.207" endtime="20230826 21:21:06.220"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${sound}</var>
+<arg>(//tbody)[1]/tr[${row}]/td[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230826 21:21:06.232" level="INFO">${sound} = ю-ли-аа-наа</msg>
+<status status="PASS" starttime="20230826 21:21:06.220" endtime="20230826 21:21:06.232"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${morse_dict}</arg>
+<arg>${letter}=${sound}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20230826 21:21:06.232" endtime="20230826 21:21:06.233"/>
+</kw>
+<status status="PASS" starttime="20230826 21:21:06.207" endtime="20230826 21:21:06.233"/>
+</iter>
+<iter>
+<var name="${row}">32</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${letter}</var>
+<arg>(//tbody)[1]/tr[${row}]/td[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230826 21:21:06.245" level="INFO">${letter} = Я</msg>
+<status status="PASS" starttime="20230826 21:21:06.233" endtime="20230826 21:21:06.245"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${sound}</var>
+<arg>(//tbody)[1]/tr[${row}]/td[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230826 21:21:06.259" level="INFO">${sound} = я-маал-я-маал</msg>
+<status status="PASS" starttime="20230826 21:21:06.245" endtime="20230826 21:21:06.259"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${morse_dict}</arg>
+<arg>${letter}=${sound}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20230826 21:21:06.259" endtime="20230826 21:21:06.259"/>
+</kw>
+<status status="PASS" starttime="20230826 21:21:06.233" endtime="20230826 21:21:06.259"/>
+</iter>
+<status status="PASS" starttime="20230826 21:21:05.388" endtime="20230826 21:21:06.259"/>
+</for>
+<kw name="Log Many" library="BuiltIn">
+<arg>${morse_dict}</arg>
+<doc>Logs the given messages as separate entries using the INFO level.</doc>
+<msg timestamp="20230826 21:21:06.259" level="INFO">{'А': 'ай-даа, ай-ваа', 'Б': 'баа-ки-те-кут, беей-ба-ра-бан', 'В': 'ви-даа-лаа, вол-чаа-таа', 'Г': 'гаа-раа-жи, гаа-гаа-рин', 'Д': 'доо-ми-ки', 'Е (также и Ё)': 'есть', 'Ж': 'же-ле-зис-тоо', 'З': 'заа-каа-ти-ки', 'И': 'и-ди, ишь-ты', 'Й': 'йес-наа-паа-раа, Йош-каа-роо-лаа, и-краа-ткоо-еее', 'К': 'каак-же-таак, каак-де-лаа', 'Л': 'лу-наа-ти-ки', 'М': 'маа-маа, Маа-шаа[21]', 'Н': 'ноо-мер, наа-те', 'О': 'оо-коо-лоо', 'П': 'пи-лаа-поо-ёт', 'Р': 'ре-шаа-ет, ру-каа-ми', 'С': 'си-ни-е, са-мо-лёт', 'Т': 'таак, таам', 'У': 'у-нес-лоо, у-бе-гуу', 'Ф': 'фи-ли-моон-чик', 'Х': 'хи-ми-чи-те', 'Ц': 'цаа-пли-наа-ши, цаа-пли-цаа-пли', 'Ч': 'чаа-шаа-тоо-нет, чее-лоо-вее-чек', 'Ш': 'шаа-роо-ваа-рыы, шуу-раа-доо-маа', 'Щ': 'щаа-ваам-не-шаа, щуу-каа-жи-ваа', 'Ъ[22]': 'твёёр-дыый-не-мяяг-киий', 'Ы': 'ыы-не-наа-доо', 'Ь (также и Ъ)': 'тоо-мяг-кий-знаак, знаак-мяг-кий-знаак', 'Э': 'э-ле-роо-ни-ки, э-ле-ктроо-ни-ка', 'Ю': 'ю-ли-аа-наа', 'Я': 'я-маал-я-маал'}</msg>
+<status status="PASS" starttime="20230826 21:21:06.259" endtime="20230826 21:21:06.259"/>
+</kw>
+<status status="PASS" starttime="20230826 21:21:05.387" endtime="20230826 21:21:06.259"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230826 21:21:06.260" endtime="20230826 21:21:08.335"/>
+</kw>
+<status status="PASS" starttime="20230826 21:20:54.804" endtime="20230826 21:21:08.335"/>
+</test>
+<status status="PASS" starttime="20230826 21:20:54.643" endtime="20230826 21:21:08.336"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Xpath Wikipedia">Xpath Wikipedia</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

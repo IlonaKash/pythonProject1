@@ -1,0 +1,192 @@
+[1692261328.354][INFO]: Starting ChromeDriver 115.0.5790.102 (90efd4b0ad6aa15eeafcdabd5817ae939f7ba059-refs/branch-heads/5790_90@{#9}) on port 51564
+[1692261328.354][INFO]: Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+[1692261328.857][INFO]: [05c6f8224b2e52ad2f7acf297d68f990] COMMAND InitSession {
+   "capabilities": {
+      "alwaysMatch": {
+         "browserName": "chrome",
+         "goog:chromeOptions": {
+            "args": [  ],
+            "extensions": [  ]
+         },
+         "pageLoadStrategy": "normal"
+      },
+      "firstMatch": [ {
+      } ]
+   }
+}
+[1692261328.860][INFO]: Populating Preferences file: {
+   "alternate_error_pages": {
+      "enabled": false
+   },
+   "autofill": {
+      "enabled": false
+   },
+   "browser": {
+      "check_default_browser": false
+   },
+   "distribution": {
+      "import_bookmarks": false,
+      "import_history": false,
+      "import_search_engine": false,
+      "make_chrome_default_for_user": false,
+      "skip_first_run_ui": true
+   },
+   "dns_prefetching": {
+      "enabled": false
+   },
+   "profile": {
+      "content_settings": {
+         "pattern_pairs": {
+            "https://*,*": {
+               "media-stream": {
+                  "audio": "Default",
+                  "video": "Default"
+               }
+            }
+         }
+      },
+      "default_content_setting_values": {
+         "geolocation": 1
+      },
+      "default_content_settings": {
+         "geolocation": 1,
+         "mouselock": 1,
+         "notifications": 1,
+         "popups": 1,
+         "ppapi-broker": 1
+      },
+      "password_manager_enabled": false
+   },
+   "safebrowsing": {
+      "enabled": false
+   },
+   "search": {
+      "suggest_enabled": false
+   },
+   "translate": {
+      "enabled": false
+   }
+}
+[1692261328.860][INFO]: Populating Local State file: {
+   "background_mode": {
+      "enabled": false
+   },
+   "ssl": {
+      "rev_checking": {
+         "enabled": false
+      }
+   }
+}
+[1692261328.862][INFO]: Launching chrome: "C:\Program Files\Google\Chrome\Application\chrome.exe" --allow-pre-commit-input --disable-background-networking --disable-backgrounding-occluded-windows --disable-client-side-phishing-detection --disable-default-apps --disable-hang-monitor --disable-popup-blocking --disable-prompt-on-repost --disable-sync --enable-automation --enable-logging --log-level=0 --no-first-run --no-service-autorun --password-store=basic --remote-debugging-port=0 --test-type=webdriver --use-mock-keychain --user-data-dir="C:\Users\kashk\AppData\Local\Temp\scoped_dir7616_1358037152" data:,
+[1692261329.379][INFO]: resolved localhost to ["::1","127.0.0.1"]
+[1692261329.383][INFO]: [05c6f8224b2e52ad2f7acf297d68f990] RESPONSE InitSession {
+   "capabilities": {
+      "acceptInsecureCerts": false,
+      "browserName": "chrome",
+      "browserVersion": "115.0.5790.171",
+      "chrome": {
+         "chromedriverVersion": "115.0.5790.102 (90efd4b0ad6aa15eeafcdabd5817ae939f7ba059-refs/branch-heads/5790_90@{#9})",
+         "userDataDir": "C:\\Users\\kashk\\AppData\\Local\\Temp\\scoped_dir7616_1358037152"
+      },
+      "goog:chromeOptions": {
+         "debuggerAddress": "localhost:51569"
+      },
+      "networkConnectionEnabled": false,
+      "pageLoadStrategy": "normal",
+      "platformName": "windows",
+      "proxy": {
+      },
+      "setWindowRect": true,
+      "strictFileInteractability": false,
+      "timeouts": {
+         "implicit": 0,
+         "pageLoad": 300000,
+         "script": 30000
+      },
+      "unhandledPromptBehavior": "dismiss and notify",
+      "webauthn:extension:credBlob": true,
+      "webauthn:extension:largeBlob": true,
+      "webauthn:extension:minPinLength": true,
+      "webauthn:extension:prf": true,
+      "webauthn:virtualAuthenticators": true
+   },
+   "sessionId": "05c6f8224b2e52ad2f7acf297d68f990"
+}
+[1692261329.384][INFO]: [05c6f8224b2e52ad2f7acf297d68f990] COMMAND SetTimeouts {
+   "script": 5000
+}
+[1692261329.384][INFO]: [05c6f8224b2e52ad2f7acf297d68f990] RESPONSE SetTimeouts
+[1692261329.385][INFO]: [05c6f8224b2e52ad2f7acf297d68f990] COMMAND SetTimeouts {
+   "implicit": 0
+}
+[1692261329.385][INFO]: [05c6f8224b2e52ad2f7acf297d68f990] RESPONSE SetTimeouts
+[1692261329.385][INFO]: [05c6f8224b2e52ad2f7acf297d68f990] COMMAND SetTimeouts {
+   "pageLoad": 300000
+}
+[1692261329.385][INFO]: [05c6f8224b2e52ad2f7acf297d68f990] RESPONSE SetTimeouts
+[1692261329.386][INFO]: [05c6f8224b2e52ad2f7acf297d68f990] COMMAND Navigate {
+   "url": "https://www.google.com/"
+}
+[1692261329.386][INFO]: Waiting for pending navigations...
+[1692261329.387][INFO]: Done waiting for pending navigations. Status: ok
+[1692261329.698][INFO]: Waiting for pending navigations...
+[1692261330.425][INFO]: Done waiting for pending navigations. Status: ok
+[1692261330.426][INFO]: [05c6f8224b2e52ad2f7acf297d68f990] RESPONSE Navigate
+[1692261330.427][INFO]: [05c6f8224b2e52ad2f7acf297d68f990] COMMAND MaximizeWindow {
+}
+[1692261330.427][INFO]: Waiting for pending navigations...
+[1692261330.428][INFO]: Done waiting for pending navigations. Status: ok
+[1692261330.545][INFO]: Waiting for pending navigations...
+[1692261330.546][INFO]: Done waiting for pending navigations. Status: ok
+[1692261330.546][INFO]: [05c6f8224b2e52ad2f7acf297d68f990] RESPONSE MaximizeWindow {
+   "height": 1048,
+   "width": 1936,
+   "x": -8,
+   "y": -8
+}
+[1692261345.549][INFO]: [05c6f8224b2e52ad2f7acf297d68f990] COMMAND FindElements {
+   "using": "css selector",
+   "value": "[id=\"APjFqb\"]"
+}
+[1692261345.549][INFO]: Waiting for pending navigations...
+[1692261345.549][INFO]: Done waiting for pending navigations. Status: ok
+[1692261345.561][INFO]: Waiting for pending navigations...
+[1692261345.562][INFO]: Done waiting for pending navigations. Status: ok
+[1692261345.562][INFO]: [05c6f8224b2e52ad2f7acf297d68f990] RESPONSE FindElements [ {
+   "element-6066-11e4-a52e-4f735466cecf": "F699E0AB8FD50E77B6EE0CD9C9E96574_element_4"
+} ]
+[1692261345.563][INFO]: [05c6f8224b2e52ad2f7acf297d68f990] COMMAND ClearElement {
+   "id": "F699E0AB8FD50E77B6EE0CD9C9E96574_element_4"
+}
+[1692261345.563][INFO]: Waiting for pending navigations...
+[1692261345.563][INFO]: Done waiting for pending navigations. Status: ok
+[1692261345.575][INFO]: 
+	=== NOTE: ===
+	The Clear command in ChromeDriver 2.43 and above
+	has been updated to conform to the current standard,
+	including raising blur event after clearing.
+
+[1692261345.582][INFO]: Waiting for pending navigations...
+[1692261345.583][INFO]: Done waiting for pending navigations. Status: ok
+[1692261345.583][INFO]: [05c6f8224b2e52ad2f7acf297d68f990] RESPONSE ClearElement
+[1692261345.584][INFO]: [05c6f8224b2e52ad2f7acf297d68f990] COMMAND TypeElement {
+   "id": "F699E0AB8FD50E77B6EE0CD9C9E96574_element_4",
+   "text": "wikipedia",
+   "value": [ "w", "i", "k", "i", "p", "e", "d", "i", "a" ]
+}
+[1692261345.584][INFO]: Waiting for pending navigations...
+[1692261345.584][INFO]: Done waiting for pending navigations. Status: ok
+[1692261345.612][INFO]: Waiting for pending navigations...
+[1692261345.613][INFO]: Done waiting for pending navigations. Status: ok
+[1692261345.613][INFO]: [05c6f8224b2e52ad2f7acf297d68f990] RESPONSE TypeElement ERROR element not interactable
+  (Session info: chrome=115.0.5790.171)
+[1692261345.615][INFO]: [05c6f8224b2e52ad2f7acf297d68f990] COMMAND Screenshot {
+}
+[1692261345.615][INFO]: Waiting for pending navigations...
+[1692261345.615][INFO]: Done waiting for pending navigations. Status: ok
+[1692261345.751][INFO]: Waiting for pending navigations...
+[1692261345.751][INFO]: Done waiting for pending navigations. Status: ok
+[1692261345.751][INFO]: [05c6f8224b2e52ad2f7acf297d68f990] RESPONSE Screenshot "iVBORw0KGgoAAAANSUhEUgAAB4AAAAOOCAYAAADh5w+lAAAAAXNSR0IArs4c6QAAIABJREFUeJzs3Xl8VPW9//H3mZnsIQmEBBIIgSDIIoRNQETQXnFFLN7W29T91+va3brV1larXbRqb2tdqbVqe0PVigvVS7ELaEEQZJN9MyxJSMKSkGWSzMz5/TGZYWYyk3Umk..."
+[1692261345.859][INFO]: [05c6f8224b2e52ad2f7acf297d68f990] COMMAND QuitAll {
+}
+[1692261345.893][INFO]: [05c6f8224b2e52ad2f7acf297d68f990] RESPONSE QuitAll
