@@ -16,21 +16,21 @@ ${age}      30
 #2 - написать тест в котором в цикле WHILE будет создаваться алфавит(English) до буквы P включительно
 #3 - написать тест в котором из переменной @{fruits}(предварительно увеличить количество значений до 10) будут в отдельный список сохраняться только те фрукты которые имеют букву "е"
 *** Test Cases ***
-1. Test
+1.0. Test
 
-       @{age}  Create List
+       @{age1}  Create List
       FOR      ${i}    IN RANGE     1   6
-           Append To List    ${age}    ${i}
+           Append To List    ${age1}    ${i}
            log to console    ${i}
       END
 
 1.1. Test
-        FOR  ${index}  ${item}   IN   @{my_fruit}
-           exit for loop if  ${item}==ananasik
+        FOR  ${index}  ${item}   IN  INUMERATE @{my_fruit}
+           exit for loop if  '${index}'=='5'
            append to list  ${fruits}  ${item}
-
+           log to console  ${item}
         END
-        log to console  ${item}
+
 
 1.2. Test
        FOR  ${index}  ${item}   IN ENUMERATE  @{my_fruit}
