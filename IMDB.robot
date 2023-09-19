@@ -28,10 +28,7 @@ ${IMDB_URL}     https://www.imdb.com/
         Log To Console       ${key}: ${value}
     END
 
-#    Get Dictionary Values    ${sorted_ratings}
-#    Log To Console    ${sorted_ratings}
-#    ${sorted_ratings} =  Sort Dictionary By Values    ${ratings}    reverse=True
-#    Log Many    ${sorted_ratings}
+
 
 *** Keywords ***
 Get IMDb Rating
